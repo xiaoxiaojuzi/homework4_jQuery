@@ -34,27 +34,30 @@ ul,ol{
  padding: 0%;
 }
 .book{
+  position: relative;
   border-style: none none dashed none;
   border-color: rgb(222, 222, 222);
   border-width: thin;
-  text-align: center;
+  text-align: left;
 }
 .book_title{
   font-size: 1.5em;
   text-align: left;
   color: rgb(96, 96, 96);
-  width: 80%;
   padding: 0.5em;
   margin: 0;
   overflow-y: hidden;
   text-overflow: ellipsis;
   white-space:nowrap;
-
+  width: 80%;
+  display: inline-block;
 }
 .book_created_time{
-  font-size: 0.5em;
-  color: rgb(200, 200, 200);
-  float: right;
-  position: relative;
-  width: 15%;
+    font-size: 1em;
+    color: rgb(200, 200, 200);
+    float: right;
+    width: 15%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
