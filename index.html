@@ -5,47 +5,8 @@
     <meta name="viewpoint" content="width=device-width">
     <meta charset="utf-8">
     <link href="stylesheets/style.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript">
-    var unixToDate = function(unixTime){
-        var time = new Date(unixTime * 1000);
-        var ymdhis = "";
-        ymdhis += time.getUTCFullYear() + "-";
-        month_oldFormat = time.getUTCMonth()+1;
-        month_newFormat = (month_oldFormat > 9) ? month_oldFormat : '0' + month_oldFormat;
-        ymdhis += month_newFormat + "-";
-        date_oldFormat = time.getUTCDate();
-        date_newFormat = (date_oldFormat > 9) ? date_oldFormat : '0' + date_oldFormat;
-        ymdhis += date_newFormat;
-        return ymdhis;
-    }
-      $(document).ready(function(){
-        $.getJSON("bookmarks.json",function(data){
-          var add_book = ''
-          $.each(data, function(index, entry){
-            add_book += '<li class="book">';
-            add_book += '<div class="book_title">' + entry.title + '</div>';
-            var time = unixToDate(entry.created);
-            add_book += '<div class="book_created_time">' + 'created @ ' + time + '</div>';
-            add_book += '</li>';
-          });
-          $('.books_container').html(add_book);
-        });
-      });
-      $(document).ready(function(){
-          $('input.inputtext').bind("input", function(){
-            var pattern = $('input.inputtext').val();
-            var reg = new RegExp(pattern, 'ig');
-            $("ul.books_container div.book_title").each(function(){
-              var str = $(this).text().replace(reg, function(word){
-               return '<font class="highlight">'+word+'</font>'
-              });
-              $(this).html(str);
-            });
-        });
-      });
-    </script>
-    </script>
+    <script type="text/javascript" src="scripts/libs/jquery-2.1.4.min.js"></script>
+    <script src="scripts/app.js"></script>
   </head>
   <body>
     <div>
