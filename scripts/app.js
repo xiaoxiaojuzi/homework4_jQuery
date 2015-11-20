@@ -34,9 +34,9 @@ $(document).ready(function(){
       var reg = new RegExp(pattern, 'ig');
       $("ul.books_container div.book_title").each(function(){
           if(!$(this).text().match(reg))
-            $(this).parent("li").hide();
+            $(this).parent("li").css('display','none');
           else {
-            $(this).parent("li").show();
+            $(this).parent("li").css('display','block');
             var str = $(this).text().replace(reg, function(word){
              return '<font class="highlight">'+word+'</font>'
             });
