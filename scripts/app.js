@@ -13,6 +13,7 @@ var unixToDate = function(unixTime){
 }
 
 
+
 $(document).ready(function(){
   $.getJSON("bookmarks.json",function(data){
     var add_book = ''
@@ -32,10 +33,15 @@ $(document).ready(function(){
       var pattern = $('input.inputtext').val();
       var reg = new RegExp(pattern, 'ig');
       $("ul.books_container div.book_title").each(function(){
-        var str = $(this).text().replace(reg, function(word){
-         return '<font class="highlight">'+word+'</font>'
-        });
-        $(this).html(str);
+          if(!$(this).text().match(reg))
+            $(this).parent("li").hide();
+          else {
+            $(this).parent("li").show();
+            var str = $(this).text().replace(reg, function(word){
+             return '<font class="highlight">'+word+'</font>'
+            });
+            $(this).html(str);
+          }
       });
   });
 });
