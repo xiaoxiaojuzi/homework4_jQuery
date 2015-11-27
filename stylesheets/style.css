@@ -28,7 +28,7 @@ ul,ol{
   padding: 0;
   margin: 0;
 }
-.books_container{
+.booksContainer{
  text-align: center;
  margin: 0 10%;
  padding: 0%;
@@ -40,7 +40,7 @@ ul,ol{
   border-width: thin;
   text-align: left;
 }
-.book_title{
+.bookTitle{
   font-size: 1.5em;
   text-align: left;
   color: rgb(96, 96, 96);
@@ -52,7 +52,7 @@ ul,ol{
   width: 80%;
   display: inline-block;
 }
-.book_created_time{
+.bookCreatedTime{
     font-size: 1em;
     color: rgb(200, 200, 200);
     float: right;

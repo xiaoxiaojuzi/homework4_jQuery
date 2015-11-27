@@ -19,12 +19,12 @@ $(document).ready(function(){
     var add_book = ''
     $.each(data, function(index, entry){
       add_book += '<li class="book">';
-      add_book += '<div class="book_title">' + entry.title + '</div>';
+      add_book += '<div class="bookTitle">' + entry.title + '</div>';
       var time = unixToDate(entry.created);
-      add_book += '<div class="book_created_time">' + 'created @ ' + time + '</div>';
+      add_book += '<div class="bookCreatedTime">' + 'created @ ' + time + '</div>';
       add_book += '</li>';
     });
-    $('.books_container').html(add_book);
+    $('.booksContainer').html(add_book);
   });
 });
 
@@ -32,7 +32,7 @@ $(document).ready(function(){
     $('input.inputtext').bind("input", function(){
       var pattern = $('input.inputtext').val();
       var reg = new RegExp(pattern, 'ig');
-      $("ul.books_container div.book_title").each(function(){
+      $("ul.booksContainer div.bookTitle").each(function(){
           if(!$(this).text().match(reg))
             $(this).parent("li").css('display','none');
           else {
