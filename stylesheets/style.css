@@ -14,7 +14,7 @@ ul,ol{
   list-style: none;
 }
 
-.inputtext{
+#inputtext{
   font-size: 1em;
   width: 70%;
   height: 2em;
